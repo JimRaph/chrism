@@ -207,7 +207,10 @@ export default function CommandCenter() {
           <div className="flex items-center space-x-4">
             <div className="text-sm text-gray-300 hidden sm:block">{user?.email}</div>
             <button 
-              onClick={() => signOut()}
+              onClick={async () => {
+                await signOut();
+                window.location.href = '/command-center/login';
+              }}
               className="px-4 py-2 bg-red-600/20 hover:bg-red-600/40 text-red-200 rounded-lg text-sm font-medium transition-colors flex items-center space-x-2"
             >
               <FaSignOutAlt />

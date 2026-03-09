@@ -24,7 +24,7 @@ export default function LoginPage() {
       setError(signInError.message);
       setIsLoggingIn(false);
     } else {
-      router.push('/');
+      window.location.href = "/command-center";
     }
   };
 
